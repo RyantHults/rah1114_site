@@ -361,22 +361,28 @@
 				</div>
 			</div>
 			<div class="row animate-box">
+				<div class="col-md-4 col-md-offset-5" position='fixed'>
+					<h1 id='form-thanks' style='color: white; visibility: hidden; overflow: hidden;'>Thanks!</h1>
+				</div>
 				<div class="col-md-10 col-md-offset-1">
 					<form class="form-inline" id='rsvp-form', name='rsvp-form'>
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
+								<div class="overlay" id=form_overlay style="background: none; visibility: hidden"></div>
 								<label for="name" class="sr-only">Name</label>
 								<input type="name" class="form-control" id="name" placeholder="Name" name="name">
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-2">
 							<div class="form-group">
+								<div class="overlay" id=form_overlay style="background: none; visibility: hidden"></div>
 								<label for="party" class="sr-only"># of people in party</label>
 								<input type="party" class="form-control" id="party" name="party" placeholder="# of people in party">
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
+								<div class="overlay" id=form_overlay style="background: none; visibility: hidden"></div>
 								<label for="email" class="sr-only">Email</label>
 								<input type="email" class="form-control" id="email" name="email" placeholder="Email">
 							</div>
@@ -455,13 +461,20 @@
 	
 	const scriptURL = 'https://script.google.com/macros/s/AKfycbwfC7MVjS1yGtTuPlBSIZrEe2U4MxQw5K-0KdMJ8bpFy5GiPB6E/exec'
 	const form = document.forms['rsvp-form']
+	const overlay = document.getElementById('form_overlay')
+	const form_button = document.getElementById('submit-form')
 
 	form.addEventListener('submit', e => {
 		e.preventDefault()
+		overlay.style.visibility = 'visible';
+		form_button.disabled = true;
+		form_button.style.backgroundColor = 'grey';
 		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 			.then(response => {
-				console.log('Success!', response)
-				form.reset()
+				console.log('Success!', response);
+				form.reset();
+				form.style.visibility = 'hidden';
+				document.getElementById('form-thanks').style.visibility = 'visible'
 			})
 			.catch(error => console.error('Error!', error.message))
 	})
