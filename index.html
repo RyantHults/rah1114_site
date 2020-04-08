@@ -165,7 +165,7 @@
 										<span>Saturday 14</span>
 										<span>November, 2020</span>
 									</div>
-									<p>The main ceremony will take place at the outdoor patio at The Lodge on Red Oak Creek. The ceremony is expected to last approximately 60 minutes.</p>
+									<p>The main ceremony will take place at the outdoor patio. The ceremony is expected to last approximately 60 minutes.</p>
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6 text-center">
@@ -178,7 +178,7 @@
 									</div>
 									<div class="event-col">
 										<i class="icon-calendar"></i>
-										<span>Monday 14</span>
+										<span>Saturday 14</span>
 										<span>November, 2020</span>
 									</div>
 									<p>Come join us in the reception hall after the main ceremony and celebrate the newly wedded couple! Food and drink will be provided.</p>
@@ -357,7 +357,7 @@
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>Are You Attending?</h2>
-					<p>Please Fill-in the form to let us know that you're attending.</p>
+					<p>Please Fill-in the form to let us know if you would like to attend.</p>
 				</div>
 			</div>
 			<div class="row animate-box">
@@ -459,7 +459,10 @@
 	form.addEventListener('submit', e => {
 		e.preventDefault()
 		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-			.then(response => console.log('Success!', response))
+			.then(response => {
+				console.log('Success!', response)
+				form.reset()
+			})
 			.catch(error => console.error('Error!', error.message))
 	})
 </script>
