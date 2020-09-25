@@ -73,6 +73,11 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0 0 20px 0;
 }
 
+.form-thanks {
+  font-weight: 100;
+  color: rgb(200,200,200);
+}
+
 ::-webkit-selection {
   color: #fff;
   background: var(--accent-color-2);
