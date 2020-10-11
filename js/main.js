@@ -12,7 +12,7 @@
 			var href = $(this).attr('href');
 			jQuery('html,body').animate({
 				scrollTop: jQuery(href).offset().top
-			}, 300);
+			}, 500, 'easeInOutExpo');
 		});
 	});
 
