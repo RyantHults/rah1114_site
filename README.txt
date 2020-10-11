@@ -1,14 +1,10 @@
 
 TITLE: 
-Wedding - 100% Fully Responsive Free HTML5 Bootstrap Template
+Wedding Template - 100% Fully Responsive Free HTML5 Bootstrap Template
 
 AUTHOR:
 DESIGNED & DEVELOPED by GetTemplates.co
-
-Website: http://gettemplates.co/
-Twitter: http://twitter.com/gettemplatesco
-Facebook: http://facebook.com/gettemplatesco
-
+Customized by Ryan Hults
 
 CREDITS:
 
@@ -56,7 +52,4 @@ http://dimsemenov.com/plugins/magnific-popup/
 
 SimplyCountDown JS
 http://vincentloy.github.io/simplyCountdown.js/
-
-Demo Images:
-http://unsplash.com
 

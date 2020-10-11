@@ -2,6 +2,20 @@
 	
 	'use strict';
 
+
+	$(document).ready(function () {
+		$(window).scroll(function () {
+			var rsvp = jQuery('#rsvp').offset().top - $(window).scrollTop();
+		});
+
+		$('#rsvp_btn').on('click', function () {
+			var href = $(this).attr('href');
+			jQuery('html,body').animate({
+				scrollTop: jQuery(href).offset().top
+			}, 300);
+		});
+	});
+
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
@@ -108,7 +122,7 @@
 							}
 
 							el.removeClass('item-animate');
-						},  k * 200, 'easeInOutExpo' );
+						},  k * 50, 'easeInOutExpo' );
 					});
 					
 				}, 100);
